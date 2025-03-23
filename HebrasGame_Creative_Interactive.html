@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Hebras Game - تحديات مبتكرة</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+        h1 {
+            color: #00ffc8;
+        }
+        .btn {
+            padding: 15px 25px;
+            font-size: 18px;
+            margin-top: 20px;
+            background-color: #e6005c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #challengeBox {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #222;
+            border: 2px solid #00ffc8;
+            border-radius: 10px;
+            font-size: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hebras Game - تحديات مبتكرة</h1>
+    <p>اضغط الزر لتوليد تحدي عشوائي:</p>
+    <button class="btn" onclick="generateChallenge()">تحدي جديد</button>
+    <div id="challengeBox"></div>
+
+    <script>
+        const challenges = [
+"الرعب الصامت: يُشغل صوت مفاجئ ومخيف. أول من يتحرك أو يصدر صوتًا يُقصى فورًا.",
+"خذ القرار أو خسارة: يُعرض لك قرار فيه مخاطرة. القرار قد ينقذك أو يقضي عليك.",
+"الصندوق الأسود: اختر صندوق من بين 3 صناديق افتراضية: واحد فيه نجاة، واحد فيه موت، والثالث مفاجأة.",
+"الذاكرة الغامضة: تشاهد رموز أو كلمات لـ5 ثواني. اختبر ذاكرتك باسترجاعها بدقة.",
+"كلمة السر القاتلة: كلمة معينة محظورة. أول من يقولها بالغلط يُقصى من الجولة.",
+"اترك يدك: امسك زر افتراضي. أول من يتركه يُقصى. اختبار صبر وتحمل.",
+"السرعة بالمعلومة: جاوب على سؤال بسيط لكن في توقيت معين. تجاوب بدري؟ OUT!",
+"أرسل أو موت: أرسل رسالة غريبة لصديق من جوالك الحقيقي. ترفض؟ تخسر.",
+"وش تختار؟: تخرج بنفسك أو تختار أحد يخرج؟ تحدي أخلاقي ونفسي.",
+"الراوي الكاذب: تعليمات اللعبة قد تكون كاذبة. فكر قبل التنفيذ!"
+        ];
+
+        function generateChallenge() {
+            const box = document.getElementById('challengeBox');
+            const challenge = challenges[Math.floor(Math.random() * challenges.length)];
+            box.innerText = challenge;
+            box.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
